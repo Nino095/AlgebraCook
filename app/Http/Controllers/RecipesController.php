@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Recipe;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -16,10 +17,19 @@ class RecipesController extends Controller
      */
     public function index()
     {
-        return ("Popis svih recepata");
+        return view ('index', ['recipes' => Recipe::get()]);
     }
 
+	   public function add()
+    {
+        return ("Prikaz view-a sa web obrascem za unos.");
+    }
 	
+	public function save(Request $request)
+	{
+		// $request->nameInputa = vrijednostInputa
+		return "Spremam podatke iz webobrasca u bazu";
+	}
 	
 	
     /**
@@ -39,16 +49,7 @@ class RecipesController extends Controller
         // 
     }
 	
-    public function add()
-    {
-        return ('prikaz view-a sa web obrascem za unos.');
-    }
-	
-	public function save(Request $request)
-	{
-		// $request->nameInputa = vrijednostInputa
-		return ("Spremam podatke iz webobrasca u bazu");
-	}
+ 
     /**
      * Display the specified resource.
      *
