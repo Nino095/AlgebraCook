@@ -41,7 +41,7 @@ class RecipesController extends Controller
 				$sastojak = new Ingredient;
 				$sastojak->name = $value;
 				$sastojak->recipe_id = $noviRecept->id;
-				
+				$sastojak->save();
 			}
 		}
 				
@@ -89,8 +89,8 @@ class RecipesController extends Controller
      */
     public function edit($id)
     {
-        return "Edit recepta sa ID: " . $id; // Prikaz web obrasca
-    }
+			return view('edit')->with('recipe', Recipe::find($id));
+	}
 
     /**
      * Update the specified resource in storage.
