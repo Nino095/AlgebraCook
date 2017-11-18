@@ -1,11 +1,17 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 class TestController extends Controller
 {
-	public function hello() {
-		return view("test", ['varijabla' => 'vrijednost ove varijable']);
+	public function zavrsnica() {
+		return view("zavrsnica", ['varijabla' => 'lijep pozdrav']);
 	}
 }
+
+?>
