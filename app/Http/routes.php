@@ -9,6 +9,13 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+
+
+	
+
+
+
 // Authentication routes
 Route::get('/auth/login', 'Auth\AuthController@getLogin');
 Route::post('/auth/login', 'Auth\AuthController@postLogin');
@@ -32,3 +39,12 @@ Route::get('/recipes/view/{id}', 'RecipesController@view'); // detaljan prikaz o
 Route::get('/recipes/edit/{id}', 'RecipesController@edit'); // prikaz webobrasca za uređivanje
 Route::post('/recipes/edit', 'RecipesController@update'); // ažuriranje podataka u bazi
 Route::get('recipes/del/{id}', 'RecipesController@delete'); // brisanje recepta
+
+
+//zadnja routa
+
+Route::get('/kraj', 'TestController@zavrsnica');
+
+
+
+
